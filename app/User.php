@@ -13,6 +13,9 @@ class User extends Authenticatable
   {
     return $this->hasMany('App\Post');
   }
+  public function likes() {
+    return $this->hasMany('App\Like');
+  }
     protected $table='users';
     use Notifiable;
 

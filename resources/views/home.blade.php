@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
-
     <title></title>
   </head>
   <body>
@@ -36,7 +35,7 @@
             <p>{{$post->body}}</p>
             <p>By <a href="{{route('ir.user', $post->user_id)}}">{{ $post->user['name'] }}</a> on {{$post->created_at->format('d/m/Y')}}</p>
             <div class="interacciones">
-              <a href=""><i class="far fa-heart"></i></a>
+              <a href="{{route('like.post',$post->id)}}"><i class="far fa-heart" id="like" onclick="likes()"> </i></a>
               @if(Auth::user() == $post->user)
               <a href="{{route('borrar.post' , $post->id)}}" style="padding-left:10px;"><i class="far fa-trash-alt"></i></a>
               @endif
@@ -51,5 +50,8 @@
     @guest
     <h2>You must Login</h2>
     @endguest
+    <script type="text/javascript">
+
+  </script>
   </body>
 </html>

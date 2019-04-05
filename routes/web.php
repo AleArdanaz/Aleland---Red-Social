@@ -23,5 +23,5 @@ Auth::routes();
 Route::get('/home', 'PostController@index')->name('home');
 Route::post('/crearpost', 'PostController@store')->name('crear.post');
 Route::get('/borrarpost/{post_id}', 'PostController@borrarPost')->name('borrar.post');
-Route::get('/account/{user_id}', 'UserController@postUser')->name('ir.user');
-Route::get('/like/{post_id}', 'PostController@likePost')->name('like.post');
+Route::get('/account/{user_id}', 'UserController@postsUser')->name('ir.user');
+Route::get('/like/{post_id}/{user_id}', 'PostController@likePost')->name('like.post');

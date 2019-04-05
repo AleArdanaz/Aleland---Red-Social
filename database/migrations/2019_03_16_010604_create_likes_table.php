@@ -18,6 +18,8 @@ class CreateLikesTable extends Migration
             $table->timestamps();
             $table->integer('user_id');
             $table->integer('post_id');
+            $table->string('postowner');
+            $table->string('postbody');
         });
     }
 

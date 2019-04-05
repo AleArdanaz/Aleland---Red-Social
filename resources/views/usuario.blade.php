@@ -34,10 +34,10 @@
       </div>
       <div class="col-md-6" style="text-align:center;">
         <h2 style="text-align:center;">Likes!</h2>
-          @foreach($postlikeds as $postliked)
+          @foreach($likes as $like)
           <div class="" style="margin-top:30px;">
-            <p>{{$postliked->body}}</p>
-            <p>By <a href="#">{{$postliked->user->name}}</a> on {{$postliked->created_at->format('d/m/Y')}}</p>
+            <p>{{$like->postbody}}</p>
+            <p>By {{$like->postowner}}<a href="#"></a> on {{$like->created_at->format('d/m/Y')}} </p>
             <a href=""><i class="far fa-heart"></i></a>
 
           </div>

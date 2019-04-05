@@ -9,10 +9,10 @@ class Like extends Model
 
   protected $table = 'likes';
     public function user(){
-      return $this->belongsTo('App\User');
+      return $this->hasOne('App\User');
     }
 
     public function post(){
-      return $this->belongsTo('App\Post');
+      return $this->hasOne('App\Post');
     }
 }

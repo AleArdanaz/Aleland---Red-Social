@@ -35,7 +35,7 @@
             <p>{{$post->body}}</p>
             <p>By <a href="{{route('ir.user', $post->user_id)}}">{{ $post->user['name'] }}</a> on {{$post->created_at->format('d/m/Y')}}</p>
             <div class="interacciones">
-              <a href="{{route('like.post',$post->id)}}"><i class="far fa-heart" id="like" onclick="likes()"> </i></a>
+              <a href="{{route('like.post',[$post->id,$post->user_id])}}"><i class="far fa-heart" id="like" onclick="likes()"> </i></a>
               @if(Auth::user() == $post->user)
               <a href="{{route('borrar.post' , $post->id)}}" style="padding-left:10px;"><i class="far fa-trash-alt"></i></a>
               @endif

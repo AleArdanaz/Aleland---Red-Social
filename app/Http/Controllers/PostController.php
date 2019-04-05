@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Post;
 use App\Like;
 use Illuminate\Http\Request;
@@ -38,16 +39,20 @@ class PostController extends Controller
     return redirect(route('home'));
 
   }
-  public function likePost($post_id) {
+  public function likePost($post_id, $user_id) {
     $alredy_like= Like::where(['user_id' => Auth::user()->id, 'post_id' => $post_id])->first();
+    $post = Post::where('id', $post_id)->first();
+    $user = User::where('id', $user_id)->first();
     if (empty($alredy_like)) {
       $like = new Like;
       $like->post_id = $post_id;
+      $like->postowner = $user->name;
+      $like->postbody = $post->body;
       $like->user_id = Auth::user()->id;
       $like->save();
       return redirect(route('home'));
     } else {
-      echo "Esto ya lo habias likeado";;
+      echo "Tengo que arreglar esto, pero si ya esta likeado no se inserta en la DB";;
     }
 
 }

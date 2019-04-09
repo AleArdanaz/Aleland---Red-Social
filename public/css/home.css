@@ -1,0 +1,26 @@
+.inputPost {
+  margin-top: 5px;
+  font-size: 18px;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 7%;
+  background-color: white;
+
+}
+.card-body{
+  
+  border: 3px;
+  border-color: black;
+  font-size: 18px;
+}
+.inside-body{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.input-div{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}

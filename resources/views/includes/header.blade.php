@@ -26,9 +26,6 @@
         <a class="nav-link" href="{{route('ir.user', Auth::user()->id)}}">My Account</a>
       </li>
       @endauth
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <!-- Authentication Links -->

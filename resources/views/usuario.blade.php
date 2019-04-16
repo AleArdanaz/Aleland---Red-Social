@@ -20,7 +20,7 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <h2 style="text-align:center;">Posteos!</h2>
+        <h2 style="text-align:center;">Posteos</h2>
         @foreach($userposts as $userpost)
         <div class="" style="text-align:center;margin-top:30px;">
           <p>{{$userpost->body}}</p>
@@ -35,12 +35,12 @@
           @endforeach
       </div>
       <div class="col-md-6" style="text-align:center;">
-        <h2 style="text-align:center;">Likes!</h2>
+        <h2 style="text-align:center;">Likes</h2>
           @foreach($likes as $like)
           <div class="" style="margin-top:30px;">
             <p>{{$like->postbody}}</p>
             <div class="inside-body">
-              <p>By {{$like->postowner}}<a href="#"></a> on {{$like->created_at->format('d/m/Y')}} </p>
+              <p>By <a href="{{route('ir.user', $like->postownerid)}}">{{$like->postowner}}</a> on {{$like->created_at->format('d/m/Y')}} </p>
               <a href=""><i class="far fa-heart"></i></a>
             </div>
 

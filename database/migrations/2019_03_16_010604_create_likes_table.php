@@ -20,6 +20,7 @@ class CreateLikesTable extends Migration
             $table->integer('post_id');
             $table->string('postowner');
             $table->string('postbody');
+            $table->integer('postownerid');
         });
     }
 

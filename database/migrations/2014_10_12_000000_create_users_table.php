@@ -19,9 +19,7 @@ class CreateUsersTable extends Migration
             $table->date('nac');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->integer('postliked');
             $table->string('password');
-            $table->increments('like_id');
             $table->rememberToken();
             $table->timestamps();
         });

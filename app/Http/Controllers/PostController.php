@@ -20,7 +20,9 @@ class PostController extends Controller
 
     $post = new Post;
     $post->body = $request->body;
-    $request->user()->posts()->save($post);
+    $post->user_id = Auth::user()->id;
+    $post->save();
+  //$request->user()->posts()->save($post);
 
     return redirect(route('home'));
   }
@@ -48,6 +50,7 @@ class PostController extends Controller
       $like->post_id = $post_id;
       $like->postowner = $user->name;
       $like->postbody = $post->body;
+      $like->postownerid = $user->id;
       $like->user_id = Auth::user()->id;
       $like->save();
       return redirect(route('home'));
